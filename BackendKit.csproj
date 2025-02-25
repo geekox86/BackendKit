@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="src/**/*.cs" />
     <Compile Remove="src/**/*.test.cs" />
   </ItemGroup>
 

@@ -1,0 +1,8 @@
+{
+  "name": "AL2023",
+  "image": "amazonlinux:2023",
+  // "forwardPorts": [],
+  "postCreateCommand": ".devcontainer/install.sh"
+  // "customizations": {},
+  // "remoteUser": "root"
+}
