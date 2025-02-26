@@ -1,0 +1,40 @@
+FROM amazonlinux:2023 AS base
+RUN dnf update -y
+RUN dnf install -y findutils gzip libicu tar
+RUN cat <<EOF > ~/.bashrc
+if [ -d /etc/profile.d ]; then
+for file in /etc/profile.d/*.sh; do
+source "\$file"
+done
+fi
+EOF
+
+FROM base AS dotnet
+RUN cd /tmp
+RUN curl -L -o dotnet.tar.gz https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.200/dotnet-sdk-9.0.200-linux-x64.tar.gz
+RUN mkdir /usr/share/dotnet
+RUN tar -xzf dotnet.tar.gz -C /usr/share/dotnet
+RUN rm dotnet.tar.gz
+RUN cat <<EOF > /etc/profile.d/dotnet.sh
+export DOTNET_ROOT="/usr/share/dotnet"
+export PATH="\$DOTNET_ROOT:\$PATH"
+EOF
+RUN source /etc/profile.d/dotnet.sh
+
+FROM dotnet AS node
+RUN curl -L -o node.tar.gz https://nodejs.org/dist/v22.14.0/node-v22.14.0-linux-x64.tar.gz
+RUN mkdir /usr/share/node
+RUN tar -xzf node.tar.gz --strip-components=1 -C /usr/share/node
+RUN rm node.tar.gz
+RUN cat <<EOF > /etc/profile.d/node.sh
+export NODE_ROOT="/usr/share/node/bin"
+export PATH="\$NODE_ROOT:\$PATH"
+EOF
+RUN source /etc/profile.d/node.sh
+
+FROM node AS pnpm
+RUN corepack prepare pnpm@10.4.1 --activate
+RUN corepack enable pnpm
+
+FROM pnpm AS devcontainer
+CMD dotnet restore "\$(basename "\$PWD").sln" && pnpm install

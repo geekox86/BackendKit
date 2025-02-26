@@ -1,8 +1,78 @@
 {
   "name": "AL2023",
-  "image": "amazonlinux:2023",
-  // "forwardPorts": [],
-  "postCreateCommand": ".devcontainer/install.sh"
-  // "customizations": {},
-  // "remoteUser": "root"
+  "build": {
+    "dockerfile": "dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "cSpell.language": "en,ar",
+
+        "database-client.autoSync": true,
+
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+
+        "github.copilot.enable": {
+          "*": true
+        },
+
+        "javascript.preferences.useAliasesForRenames": false,
+        "javascript.updateImportsOnFileMove.enabled": "always",
+
+        "todo-tree.general.showActivityBarBadge": true,
+        "todo-tree.general.tags": [
+          "BUG",
+          "HACK",
+          "FIXME",
+          "TODO",
+          "[ ]",
+          "[x]"
+        ],
+        "todo-tree.highlights.useColourScheme": true,
+        "todo-tree.tree.showCountsInTree": true,
+
+        "typescript.preferences.useAliasesForRenames": false,
+        "typescript.updateImportsOnFileMove.enabled": "always",
+
+        "vue.server.hybridMode": "typeScriptPluginOnly",
+
+        "[csharp]": {
+          "editor.defaultFormatter": "csharpier.csharpier-vscode"
+        }
+      },
+      "extensions": [
+        "christian-kohler.npm-intellisense",
+        "csharpier.csharpier-vscode",
+        "cweijan.vscode-database-client2",
+        "dbaeumer.vscode-eslint",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "GraphQL.vscode-graphql",
+        "GraphQL.vscode-graphql-syntax",
+        "Gruntfuggly.todo-tree",
+        "humao.rest-client",
+        "inferrinizzard.prettier-sql-vscode",
+        "jacobcassidy.css-nesting-syntax-highlighting",
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "ms-dotnettools.vscodeintellicode-csharp",
+        "ms-playwright.playwright",
+        "ms-vscode.vscode-typescript-next",
+        "ms-vsliveshare.vsliveshare",
+        "patcx.vscode-nuget-gallery",
+        "qufiwefefwoyn.inline-sql-syntax",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-arabic",
+        "uniquevision.vscode-plpgsql-lsp",
+        "vitest.explorer",
+        "Vue.volar"
+      ],
+      "recommendations": ["rangav.vscode-thunder-client"]
+    }
+  }
 }

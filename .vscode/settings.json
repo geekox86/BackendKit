@@ -1,25 +1,30 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "csharp.inlayHints.enableInlayHintsForImplicitObjectCreation": true,
+  "csharp.inlayHints.enableInlayHintsForImplicitVariableTypes": true,
+  "csharp.inlayHints.enableInlayHintsForLambdaParameterTypes": true,
+  "csharp.inlayHints.enableInlayHintsForTypes": true,
+
+  "debug.toolBarLocation": "docked",
+
+  "dotnet.inlayHints.enableInlayHintsForLiteralParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForOtherParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForParameters": true,
+
   "editor.fontSize": 14,
-  "editor.formatOnSave": true,
   "editor.renderControlCharacters": true,
   "editor.wordWrap": "on",
+
   "explorer.autoReveal": false,
   "explorer.compactFolders": false,
   "explorer.fileNesting.enabled": true,
-  "explorer.sortOrder": "filesFirst",
-  "github.copilot.enable": {
-    "*": true
+  "explorer.fileNesting.patterns": {
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.ts": "${capture}.js, ${capture}.typegen.ts",
+    "package.json": "pnpm-lock.yaml",
+    "tsconfig.json": "tsconfig.*.json"
   },
-  "window.commandCenter": true,
-  "workbench.colorTheme": "GitHub Dark Default",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "newUntitledFile",
-
-  "database-client.autoSync": true,
-
-  "cSpell.language": "en,ar",
+  "explorer.sortOrder": "filesFirst",
 
   "indentRainbow.lightIndicatorStyleLineWidth": 4,
   "indentRainbow.colors": [
@@ -32,33 +37,10 @@
     "rgba(246, 140, 31, 0.3)"
   ],
 
-  "todo-tree.general.showActivityBarBadge": true,
-  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "[ ]", "[x]"],
-  "todo-tree.highlights.useColourScheme": true,
-  "todo-tree.tree.showCountsInTree": true,
+  "window.commandCenter": true,
 
-  "explorer.fileNesting.patterns": {
-    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-    "*.ts": "${capture}.js, ${capture}.typegen.ts",
-    "package.json": "pnpm-lock.yaml",
-    "tsconfig.json": "tsconfig.*.json"
-  },
-  "javascript.preferences.useAliasesForRenames": false,
-  "typescript.preferences.useAliasesForRenames": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "vue.server.hybridMode": "typeScriptPluginOnly",
-
-  "csharp.inlayHints.enableInlayHintsForImplicitObjectCreation": true,
-  "csharp.inlayHints.enableInlayHintsForImplicitVariableTypes": true,
-  "csharp.inlayHints.enableInlayHintsForLambdaParameterTypes": true,
-  "csharp.inlayHints.enableInlayHintsForTypes": true,
-  "debug.toolBarLocation": "docked",
-  "dotnet.inlayHints.enableInlayHintsForLiteralParameters": true,
-  "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true,
-  "dotnet.inlayHints.enableInlayHintsForOtherParameters": true,
-  "dotnet.inlayHints.enableInlayHintsForParameters": true,
-  "[csharp]": {
-    "editor.defaultFormatter": "csharpier.csharpier-vscode"
-  }
+  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "newUntitledFile"
 }
