@@ -8,19 +8,14 @@
     "vscode": {
       "settings": {
         "cSpell.language": "en,ar",
-
         "database-client.autoSync": true,
-
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,
-
         "github.copilot.enable": {
           "*": true
         },
-
         "javascript.preferences.useAliasesForRenames": false,
         "javascript.updateImportsOnFileMove.enabled": "always",
-
         "todo-tree.general.showActivityBarBadge": true,
         "todo-tree.general.tags": [
           "BUG",
@@ -32,12 +27,9 @@
         ],
         "todo-tree.highlights.useColourScheme": true,
         "todo-tree.tree.showCountsInTree": true,
-
         "typescript.preferences.useAliasesForRenames": false,
         "typescript.updateImportsOnFileMove.enabled": "always",
-
         "vue.server.hybridMode": "typeScriptPluginOnly",
-
         "[csharp]": {
           "editor.defaultFormatter": "csharpier.csharpier-vscode"
         }
