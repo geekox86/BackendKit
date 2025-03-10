@@ -10,4 +10,12 @@
     <Compile Remove="src/**/*.test.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="HotChocolate" Version="15.0.3" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="15.0.3" />
+    <PackageReference Include="HotChocolate.Types.Analyzers" Version="15.0.3" />
+    <PackageReference Include="MailKit" Version="4.11.0" />
+  </ItemGroup>
+
 </Project>
