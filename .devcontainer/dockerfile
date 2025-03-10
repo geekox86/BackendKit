@@ -1,4 +1,4 @@
-FROM amazonlinux:2023
+FROM amazonlinux:2023.6.20250218.2
 RUN dnf update -y
 RUN dnf install -y findutils git gzip libicu tar
 RUN { [ "$(uname -m)" = "aarch64" ] && echo arm64 || echo x64; } > /tmp/arch.txt

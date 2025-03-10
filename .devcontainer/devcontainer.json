@@ -7,15 +7,55 @@
   "customizations": {
     "vscode": {
       "settings": {
+        "csharp.inlayHints.enableInlayHintsForImplicitObjectCreation": true,
+        "csharp.inlayHints.enableInlayHintsForImplicitVariableTypes": true,
+        "csharp.inlayHints.enableInlayHintsForLambdaParameterTypes": true,
+        "csharp.inlayHints.enableInlayHintsForTypes": true,
         "cSpell.language": "en,ar",
         "database-client.autoSync": true,
+        "debug.toolBarLocation": "docked",
+        "dotnet.inlayHints.enableInlayHintsForLiteralParameters": true,
+        "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true,
+        "dotnet.inlayHints.enableInlayHintsForOtherParameters": true,
+        "dotnet.inlayHints.enableInlayHintsForParameters": true,
+        "editor.cursorBlinking": "expand",
+        "editor.cursorSmoothCaretAnimation": "on",
         "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.fontSize": 14,
         "editor.formatOnSave": true,
+        "editor.renderControlCharacters": true,
+        "editor.wordWrap": "on",
+        "explorer.autoReveal": false,
+        "explorer.compactFolders": false,
+        "explorer.fileNesting.enabled": true,
+        "explorer.fileNesting.patterns": {
+          "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+          "*.ts": "${capture}.js, ${capture}.typegen.ts",
+          "package.json": "pnpm-lock.yaml",
+          "tsconfig.json": "tsconfig.*.json"
+        },
+        "explorer.sortOrder": "filesFirst",
         "github.copilot.enable": {
           "*": true
         },
+        "indentRainbow.colors": [
+          "rgba(53, 52, 53, 0.3)",
+          "rgba(42, 51, 136, 0.3)",
+          "rgba(94, 45, 144, 0.3)",
+          "rgba(123, 28, 125, 0.3)",
+          "rgba(218, 18, 75, 0.3)",
+          "rgba(239, 83, 61, 0.3)",
+          "rgba(246, 140, 31, 0.3)"
+        ],
         "javascript.preferences.useAliasesForRenames": false,
         "javascript.updateImportsOnFileMove.enabled": "always",
+        "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+        "javascript.inlayHints.parameterNames.enabled": "all",
+        "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+        "javascript.inlayHints.parameterTypes.enabled": true,
+        "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+        "javascript.inlayHints.variableTypes.enabled": true,
+        "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
         "todo-tree.general.showActivityBarBadge": true,
         "todo-tree.general.tags": [
           "BUG",
@@ -27,9 +67,23 @@
         ],
         "todo-tree.highlights.useColourScheme": true,
         "todo-tree.tree.showCountsInTree": true,
+        "typescript.inlayHints.enumMemberValues.enabled": true,
+        "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+        "typescript.inlayHints.parameterNames.enabled": "all",
+        "typescript.inlayHints.parameterTypes.enabled": true,
+        "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+        "typescript.inlayHints.variableTypes.enabled": true,
+        "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
         "typescript.preferences.useAliasesForRenames": false,
         "typescript.updateImportsOnFileMove.enabled": "always",
+        "vue.inlayHints.destructuredProps": true,
+        "vue.inlayHints.inlineHandlerLeading": true,
+        "vue.inlayHints.missingProps": true,
+        "vue.inlayHints.vBindShorthand": true,
         "vue.server.hybridMode": "typeScriptPluginOnly",
+        "window.commandCenter": true,
+        "workbench.sideBar.location": "right",
+        "workbench.startupEditor": "newUntitledFile",
         "[csharp]": {
           "editor.defaultFormatter": "csharpier.csharpier-vscode"
         }
@@ -56,6 +110,7 @@
         "ms-playwright.playwright",
         "ms-vscode.vscode-typescript-next",
         "ms-vsliveshare.vsliveshare",
+        "oderwat.indent-rainbow",
         "patcx.vscode-nuget-gallery",
         "qufiwefefwoyn.inline-sql-syntax",
         "streetsidesoftware.code-spell-checker",
@@ -63,8 +118,7 @@
         "uniquevision.vscode-plpgsql-lsp",
         "vitest.explorer",
         "Vue.volar"
-      ],
-      "recommendations": ["rangav.vscode-thunder-client"]
+      ]
     }
   }
 }
