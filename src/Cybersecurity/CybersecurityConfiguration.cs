@@ -1,6 +1,5 @@
 using System.Security.Claims;
 using System.Security.Principal;
-using HotChocolate.Resolvers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,28 +30,14 @@ internal static class CybersecurityConfiguration
 
     return services
       .AddAuthentication()
-      .Services.AddAuthorization(options =>
-        options.AddPolicy(
-          "Admin",
-          policy =>
-          {
-            policy
-              .RequireAuthenticatedUser()
-              .RequireAssertion(context =>
-              {
-                ((IMiddlewareContext)context.Resource!).Result = null;
-                return true;
-              });
-          }
-        )
-      )
+      .Services.AddAuthorization()
       .AddHttpContextAccessor()
       .AddScoped(
         (services) =>
           services.GetService<IHttpContextAccessor>()!.HttpContext?.User
           ?? new ClaimsPrincipal(
             new ClaimsIdentity([new Claim(ClaimTypes.Name, "ARAMCO\\system")])
-          )
+          ) // TODO Custom system user?
       );
   }
 
@@ -61,6 +46,8 @@ internal static class CybersecurityConfiguration
     bool isDevelopment
   )
   {
+    app.UseHsts().UseHttpsRedirection();
+
     if (isDevelopment)
     {
       app.UseCors();
@@ -73,14 +60,14 @@ internal static class CybersecurityConfiguration
               [new Claim(ClaimTypes.Name, "ARAMCO\\testuser")],
               "Test"
             )
-          );
+          ); // TODO Custom test user?
 
           await next();
         }
       );
     }
 
-    app.UseHsts().UseAuthentication().UseAuthorization();
+    app.UseAuthentication().UseAuthorization();
 
     return app;
   }
@@ -89,5 +76,5 @@ internal static class CybersecurityConfiguration
 internal static class IdentityExtensions
 {
   internal static string GetUser(this IIdentity identity) =>
-    identity.Name!["ARAMCO\\".Length..].ToUpper();
+    identity.Name!["ARAMCO\\".Length..].ToUpper(); // TODO Custom domain?
 }

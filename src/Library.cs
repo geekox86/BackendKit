@@ -10,7 +10,7 @@ public static class BackendKit
   {
     var appBuilder = WebApplication.CreateBuilder();
     var appConfig = appBuilder.Configuration;
-    var isDevelopment = appBuilder.Environment.IsDevelopment();
+    var isDev = appBuilder.Environment.IsDevelopment();
 
     var appName = appConfig.GetValue<string>("Application")!;
     var dbConnStr = appConfig.GetConnectionString("Database")!;
@@ -19,7 +19,7 @@ public static class BackendKit
       .Get<EmailSettings>()!;
 
     appBuilder
-      .Services.AddCybersecurity(isDevelopment)
+      .Services.AddCybersecurity(isDev)
       .AddLogging()
       .AddPersistence(dbConnStr)
       .AddEmail(emailSettings)
@@ -27,6 +27,6 @@ public static class BackendKit
 
     var app = appBuilder.Build();
 
-    app.UseCybersecurity(isDevelopment).UseInterfacing().Run();
+    app.UseCybersecurity(isDev).UseInterfacing().Run();
   }
 }
