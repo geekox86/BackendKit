@@ -1,10 +1,10 @@
-using Microsoft.Extensions.DependencyInjection;
+// using Microsoft.Extensions.DependencyInjection;
 
-namespace BackendKit;
+// namespace BackendKit;
 
-internal static class LoggerConfiguration
-{
-  internal static IServiceCollection AddLogging(
-    this IServiceCollection services
-  ) => services.AddScoped<Logger>();
-}
+// internal static class LoggerConfiguration
+// {
+//   internal static IServiceCollection AddLogging(
+//     this IServiceCollection services
+//   ) => services.AddScoped<Logger>();
+// }

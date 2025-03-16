@@ -1,5 +1,6 @@
 using System.Reflection;
 using HotChocolate.Execution.Configuration;
+using HotChocolate.Types;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BackendKit;

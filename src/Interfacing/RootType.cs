@@ -2,5 +2,5 @@ namespace BackendKit;
 
 public class RootType
 {
-  public bool __application => "BackendKit";
+  public string __application => "BackendKit";
 }

@@ -19,14 +19,16 @@ public static class BackendKit
       .Get<EmailSettings>()!;
 
     appBuilder
-      .Services.AddCybersecurity(isDev)
-      .AddLogging()
-      .AddPersistence(dbConnStr)
+      .Services
+      // .AddCybersecurity(isDev)
+      // .AddLogging()
+      // .AddPersistence(dbConnStr)
       .AddEmail(emailSettings)
       .AddInterfacing(appName);
 
     var app = appBuilder.Build();
 
-    app.UseCybersecurity(isDev).UseInterfacing().Run();
+    // app.UseCybersecurity(isDev).UseInterfacing().Run();
+    app.UseInterfacing().Run();
   }
 }

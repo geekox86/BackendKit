@@ -14,10 +14,10 @@ internal static class InterfacingConfiguration
   {
     services
       .AddGraphQLServer()
-      .AddDiagnosticEventListener<DiagnosticLogger>()
+      // .AddDiagnosticEventListener<DiagnosticLogger>()
       .AddAuthorization()
-      .TryAddTypeInterceptor<UnionTypeInterceptor>()
-      .AddConvention<INamingConventions>((_) => new NamingConventions(appName))
+      // .TryAddTypeInterceptor<UnionTypeInterceptor>()
+      // .AddConvention<INamingConventions>((_) => new NamingConventions(appName))
       .AddQueryType<RootType>()
       .AddMutationType<RootType>()
       .AddUploadType()
