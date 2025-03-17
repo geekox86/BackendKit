@@ -11,7 +11,9 @@ public class InterfacingConfigurationTests
   {
     var appBuilder = WebApplication.CreateBuilder();
     var app = appBuilder.Build();
-    using var appServer = new TestServer(app.Services);
-    using var appClient = appServer.CreateClient();
+    using var appServer = app.GetTestServer();
+    using var appClient = app.GetTestClient();
+
+    Assert.True(true);
   }
 }

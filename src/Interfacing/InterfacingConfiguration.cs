@@ -1,5 +1,4 @@
 using HotChocolate.AspNetCore;
-using HotChocolate.Types.Descriptors;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
