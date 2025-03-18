@@ -18,6 +18,7 @@
         "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true,
         "dotnet.inlayHints.enableInlayHintsForOtherParameters": true,
         "dotnet.inlayHints.enableInlayHintsForParameters": true,
+        "dotnet.testWindow.useTestingPlatformProtocol": true,
         "editor.cursorBlinking": "expand",
         "editor.cursorSmoothCaretAnimation": "on",
         "editor.defaultFormatter": "esbenp.prettier-vscode",
