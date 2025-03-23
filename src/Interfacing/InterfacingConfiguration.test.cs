@@ -1,4 +1,5 @@
-using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.TestHost;
 
 // using Microsoft.AspNetCore.TestHost;
 
@@ -9,10 +10,9 @@ public class InterfacingConfigurationTests
   [Test]
   public async Task Test()
   {
-    var appBuilder = WebApplication.CreateBuilder();
-    var app = appBuilder.Build();
-    // using var appServer = app.GetTestServer();
-    // using var appClient = app.GetTestClient();
+    var appBuilder = new WebHostBuilder();
+    using var appServer = new TestServer(appBuilder);
+    using var appClient = appServer.CreateClient();
 
     await Assert.That(true).IsTrue();
   }
