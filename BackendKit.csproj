@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="src/**/*.test.cs" />
-    <InternalsVisibleTo Include="./BackendKit.test" />
+    <Compile Remove="src/**/*.Test.cs" />
+    <InternalsVisibleTo Include="BackendKit.Test" />
   </ItemGroup>
 
   <ItemGroup>

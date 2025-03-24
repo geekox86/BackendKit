@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <Compile Remove="src/**/*.cs" />
-    <Compile Include="src/**/*.test.cs" />
+    <Compile Include="src/**/*.Test.cs" />
   </ItemGroup>
 
   <ItemGroup>
